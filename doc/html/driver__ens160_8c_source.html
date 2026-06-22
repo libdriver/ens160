@@ -1207,18 +1207,18 @@ $(function(){initNavTree('driver__ens160_8c_source.html','',''); });
 <div class="foldopen" id="foldopen01499" data-start="{" data-end="}">
 <div class="line"><a id="l01499" name="l01499"></a><span class="lineno"><a class="line" href="group__ens160__basic__driver.html#gaa9f049d4caa8e7a1c3501cf70218beea"> 1499</a></span>uint8_t <a class="code hl_function" href="group__ens160__basic__driver.html#gaa9f049d4caa8e7a1c3501cf70218beea">ens160_temperature_convert_to_data</a>(<a class="code hl_typedef" href="group__ens160__basic__driver.html#gadd490ba6bdb1e202076034f2431eeef3">ens160_handle_t</a> *handle, uint16_t reg, <span class="keywordtype">float</span> *celsius_deg)</div>
 <div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>{</div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>    <span class="keywordflow">if</span> (handle == NULL)                                                 <span class="comment">/* check handle */</span></div>
+<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>    <span class="keywordflow">if</span> (handle == NULL)                                       <span class="comment">/* check handle */</span></div>
 <div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>    {</div>
-<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>        <span class="keywordflow">return</span> 2;                                                       <span class="comment">/* return error */</span></div>
+<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>        <span class="keywordflow">return</span> 2;                                             <span class="comment">/* return error */</span></div>
 <div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>    }</div>
-<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>    <span class="keywordflow">if</span> (handle-&gt;<a class="code hl_variable" href="structens160__handle__s.html#a19bedf28d2b9748f6a62d9ae93f4e68f">inited</a> != 1)                                            <span class="comment">/* check handle initialization */</span></div>
+<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>    <span class="keywordflow">if</span> (handle-&gt;<a class="code hl_variable" href="structens160__handle__s.html#a19bedf28d2b9748f6a62d9ae93f4e68f">inited</a> != 1)                                  <span class="comment">/* check handle initialization */</span></div>
 <div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>    {</div>
-<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>        <span class="keywordflow">return</span> 3;                                                       <span class="comment">/* return error */</span></div>
+<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>        <span class="keywordflow">return</span> 3;                                             <span class="comment">/* return error */</span></div>
 <div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>    }</div>
 <div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>    </div>
-<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    *celsius_deg = (uint16_t)(((<span class="keywordtype">float</span>)(reg) / 64.0f) - 273.15f);        <span class="comment">/* convert raw data to real data */</span></div>
+<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    *celsius_deg = (((float)(reg) / 64.0f) - 273.15f);        <span class="comment">/* convert raw data to real data */</span></div>
 <div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>    </div>
-<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>    <span class="keywordflow">return</span> 0;                                                           <span class="comment">/* success return 0 */</span></div>
+<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>    <span class="keywordflow">return</span> 0;                                                 <span class="comment">/* success return 0 */</span></div>
 <div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>}</div>
 </div>
 <div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span></div>

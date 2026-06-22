@@ -1498,18 +1498,18 @@ uint8_t ens160_temperature_convert_to_register(ens160_handle_t *handle, float ce
  */
 uint8_t ens160_temperature_convert_to_data(ens160_handle_t *handle, uint16_t reg, float *celsius_deg)
 {
-    if (handle == NULL)                                                 /* check handle */
+    if (handle == NULL)                                       /* check handle */
     {
-        return 2;                                                       /* return error */
+        return 2;                                             /* return error */
     }
-    if (handle->inited != 1)                                            /* check handle initialization */
+    if (handle->inited != 1)                                  /* check handle initialization */
     {
-        return 3;                                                       /* return error */
+        return 3;                                             /* return error */
     }
     
-    *celsius_deg = (uint16_t)(((float)(reg) / 64.0f) - 273.15f);        /* convert raw data to real data */
+    *celsius_deg = (((float)(reg) / 64.0f) - 273.15f);        /* convert raw data to real data */
     
-    return 0;                                                           /* success return 0 */
+    return 0;                                                 /* success return 0 */
 }
 
 /**
